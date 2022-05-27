@@ -2,14 +2,14 @@ import {createContext, useContext} from 'react';
 
 const DataContext = createContext(null);
 
-export function DataProvider({children, data}){
+export default function DataProvider({children, data}){
     return <DataContext.Provider value={data}>{children}</DataContext.Provider>
 }
 
 const fakeData = [
-    "Wait, it doesn't wait for React to load?",
-    'How does this even work?',
-    'I like marshmallows',
+    "second page",
+    'test page',
+    'move page',
 ];
 
 export function useData(){

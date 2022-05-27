@@ -10,7 +10,8 @@ const express = require('express');
 const compress = require('compression');
 const {readFileSync} = require('fs');
 const path = require('path');
-const render = require('./render');
+const renderMain = require('./renderMain');
+const renderTest = require('./renderTest');
 const {JS_BUNDLE_DELAY} = require('./delays');
 
 const PORT = process.env.PORT || 3000;
@@ -28,8 +29,15 @@ app.use(compress());
 app.get('/', handleErrors(async function(req, res){
     console.log("server start")
     await waitForWebpack();
-    render(req.url, res);
+    renderMain(req.url, res);
 }));
+
+app.get('/test', handleErrors(async function(req, res){
+    console.log("server start")
+    await waitForWebpack();
+    renderTest(req.url, res);
+}));
+
 app.use(express.static('build'));
 app.use(express.static('public'));
 

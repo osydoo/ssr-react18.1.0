@@ -8,10 +8,13 @@ webpack(
     {
         mode: isProduction ? 'production' : 'development',
         devtool: isProduction ? 'source-map' : 'cheap-module-source-map',
-        entry: [path.resolve(__dirname, '../src/index.js')],
+        entry: {
+            main: path.resolve(__dirname, '../src/pages/main/index.js'),
+            test: path.resolve(__dirname, '../src/pages/test/index.js')
+        },
         output: {
             path: path.resolve(__dirname, '../build'),
-            filename: 'main.js',
+            filename: '[name].js',
         },
         module: {
             rules: [

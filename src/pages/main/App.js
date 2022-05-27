@@ -9,12 +9,12 @@
 import {Suspense, lazy} from 'react';
 import {ErrorBoundary} from 'react-error-boundary';
 import Html from './Html';
-import Spinner from './Spinner';
-import Layout from './Layout';
-import NavBar from './NavBar';
+import Spinner from '../../components/Spinner';
+import Layout from '../../components/Layout';
+import NavBar from '../../components/NavBar';
 
 const Comments = lazy(() => import('./Comments' /* webpackPrefetch: true */));
-const Sidebar = lazy(() => import('./Sidebar' /* webpackPrefetch: true */));
+const Sidebar = lazy(() => import('../../components/Sidebar' /* webpackPrefetch: true */));
 const Post = lazy(() => import('./Post' /* webpackPrefetch: true */));
 
 export default function App({assets}) {

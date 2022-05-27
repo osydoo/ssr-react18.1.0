@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{17:function(e,t,n){"use strict";n.r(t),n.d(t,"default",(function(){return s}));var o=n(1),r=n(0),a=Object(o.createContext)(null);var c=["Wait, it doesn't wait for React to load?","How does this even work?","I like marshmallows"];function s(){var e,t=(null!==(e=Object(o.useContext)(a))&&e.read(),c);return Object(r.jsx)(r.Fragment,{children:t.map((function(e,t){return Object(r.jsx)("p",{className:"comment",children:e},t)}))})}}}]);
-//# sourceMappingURL=1.main.js.map

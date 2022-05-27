@@ -1,4 +1,4 @@
-import {useData} from './data';
+import {useData} from './context/data';
 
 export default function Comments() {
     const comments = useData();
