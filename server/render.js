@@ -20,11 +20,12 @@ module.exports = function render(url, res){
             <App assets={assets} />
         </DataProvider>,
         {
-            onReadyToStream(){
+            onShellReady(){ // 이것도 변경해줘야한다.
                 res.statusCode = didError ? 500 : 200;
                 res.setHeader('Content-type', 'text/html');
                 res.write('<!DOCTYPE html>');
                 pipe(res);
+                console.log(pipe)
             },
             onError(x){
                 didError = true;
@@ -32,6 +33,7 @@ module.exports = function render(url, res){
             }
         }
     );
+    console.log(abort)
     setTimeout(abort, ABORT_DELAY);
 }
 
